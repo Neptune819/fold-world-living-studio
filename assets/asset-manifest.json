@@ -1,0 +1,203 @@
+{
+  "version": "5.8.1",
+  "renderer": "Three.js r180 WebGL; desktop landscape; DPR up to 1.5; drawing buffers capped at plaza 1.85MP / lake 1.65MP / atelier 1.5MP; selective shadows and rigid character batches",
+  "visualTarget": "First-person rowing on moonlit water among ancient ruins, with a walnut and brass boat, oar contact ripples, shore exhibits and a warm magical gate",
+  "assets": [
+    {
+      "file": "utopia-frieze-v58.png",
+      "role": "Astronomical limestone relief surface on real 3D plaza cornices and instrument piers",
+      "source": "Built-in image_gen original generation, 2026-10-22",
+      "size": [
+        2172,
+        724
+      ],
+      "notes": "Full prompt in ART-NOTES.md; surface artwork and subtle bump approximation, not a full building or calibrated PBR map set."
+    },
+    {
+      "file": "lunar-relief-v58.png",
+      "role": "Original moon-phase stone relief on recessed near-shore ruin panels",
+      "source": "Built-in image_gen original generation, 2026-10-23",
+      "size": [
+        724,
+        2172
+      ],
+      "notes": "Full prompt in ART-NOTES.md; physical panel preserves 1:3 aspect, existing stone normals and roughness remain."
+    },
+    {
+      "file": "../moon-craft.js",
+      "role": "Tapered fractured monoliths, recessed stone frames, masonry arch blocks and instrument assemblies",
+      "source": "Original local geometry code, 2026-10-23",
+      "notes": "Repeated architectural details use instancing; no downloaded 3D model."
+    },
+    {
+      "file": "../lake-voyage.js",
+      "role": "Original 3D boat, paired oars, lantern and distance-driven rowing motion",
+      "source": "Original local geometry, Canvas wood texture and GLSL ripple code, 2026-10-20",
+      "notes": "No downloaded boat model or mage animation. Water interaction is an analytic shader approximation, not fluid simulation."
+    },
+    {
+      "file": "ruin-stone.png",
+      "role": "Colour and derived bump/roughness material for 3D stone",
+      "source": "Built-in image_gen, generated 2026-10-12",
+      "alpha": false,
+      "notes": "Historical material retained; current stone uses independent CC0 surface maps."
+    },
+    {
+      "file": "ruins-moon.png",
+      "role": "Distant spatial moon billboard",
+      "source": "Built-in image_gen, generated 2026-10-12",
+      "alpha": true,
+      "notes": "Generation prompt in ART-NOTES.md"
+    },
+    {
+      "file": "utopia-sky.png",
+      "role": "Existing first-world distant scenic painting",
+      "source": "Existing built-in image_gen output",
+      "alpha": false
+    },
+    {
+      "file": "../moon-ruins.js",
+      "role": "3D stone geometry, cloud and water shaders",
+      "source": "Original local code",
+      "notes": "Current water uses real scene planar reflection, independent ripple normals; not fluid simulation."
+    },
+    {
+      "file": "../magic-gates.js",
+      "role": "Opaque magical energy shader, original marks and batch particles",
+      "source": "Original local code",
+      "notes": "Visual fantasy-film inspiration, no film frames or movie assets shipped"
+    },
+    {
+      "file": "../concepts/moon-ruins-reference.png",
+      "role": "User supplied visual target",
+      "source": "User attachment",
+      "notes": "Local reference only; excluded from desktop package and repository"
+    },
+    {
+      "file": "pbr/rock_face-color.jpg",
+      "role": "color",
+      "source": "https://polyhaven.com/a/rock_face",
+      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rock_face/rock_face_diff_1k.jpg",
+      "license": "CC0",
+      "size": [
+        1024,
+        1024
+      ],
+      "status": "verified-in-runtime"
+    },
+    {
+      "file": "pbr/rock_face-normal.jpg",
+      "role": "normal",
+      "source": "https://polyhaven.com/a/rock_face",
+      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rock_face/rock_face_nor_gl_1k.jpg",
+      "license": "CC0",
+      "size": [
+        1024,
+        1024
+      ],
+      "status": "verified-in-runtime"
+    },
+    {
+      "file": "pbr/rock_face-roughness.jpg",
+      "role": "roughness",
+      "source": "https://polyhaven.com/a/rock_face",
+      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rock_face/rock_face_rough_1k.jpg",
+      "license": "CC0",
+      "size": [
+        1024,
+        1024
+      ],
+      "status": "verified-in-runtime"
+    },
+    {
+      "file": "pbr/metal_plate-color.jpg",
+      "role": "color",
+      "source": "https://polyhaven.com/a/metal_plate",
+      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/metal_plate/metal_plate_diff_1k.jpg",
+      "license": "CC0",
+      "size": [
+        1024,
+        1024
+      ],
+      "status": "verified-in-runtime"
+    },
+    {
+      "file": "pbr/metal_plate-normal.jpg",
+      "role": "normal",
+      "source": "https://polyhaven.com/a/metal_plate",
+      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/metal_plate/metal_plate_nor_gl_1k.jpg",
+      "license": "CC0",
+      "size": [
+        1024,
+        1024
+      ],
+      "status": "verified-in-runtime"
+    },
+    {
+      "file": "pbr/metal_plate-roughness.jpg",
+      "role": "roughness",
+      "source": "https://polyhaven.com/a/metal_plate",
+      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/metal_plate/metal_plate_rough_1k.jpg",
+      "license": "CC0",
+      "size": [
+        1024,
+        1024
+      ],
+      "status": "verified-in-runtime"
+    },
+    {
+      "file": "pbr/concrete_wall_004-color.jpg",
+      "role": "color",
+      "source": "https://polyhaven.com/a/concrete_wall_004",
+      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_wall_004/concrete_wall_004_diff_1k.jpg",
+      "license": "CC0",
+      "size": [
+        1024,
+        1024
+      ],
+      "status": "verified-in-runtime"
+    },
+    {
+      "file": "pbr/concrete_wall_004-normal.jpg",
+      "role": "normal",
+      "source": "https://polyhaven.com/a/concrete_wall_004",
+      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_wall_004/concrete_wall_004_nor_gl_1k.jpg",
+      "license": "CC0",
+      "size": [
+        1024,
+        1024
+      ],
+      "status": "verified-in-runtime"
+    },
+    {
+      "file": "pbr/concrete_wall_004-roughness.jpg",
+      "role": "roughness",
+      "source": "https://polyhaven.com/a/concrete_wall_004",
+      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_wall_004/concrete_wall_004_rough_1k.jpg",
+      "license": "CC0",
+      "size": [
+        1024,
+        1024
+      ],
+      "status": "verified-in-runtime"
+    },
+    {
+      "file": "moon-horizon-v56.png",
+      "role": "Distant painting with fixed moon removed",
+      "source": "Built-in image_gen edit of v5.5, 2026-10-14",
+      "notes": "Prompt in ART-NOTES.md; independent moon and clouds are rendered above it."
+    },
+    {
+      "file": "../vendor/objects/Water.js",
+      "role": "Three r180 reflection helper",
+      "source": "https://github.com/mrdoob/three.js/blob/r180/examples/jsm/objects/Water.js",
+      "license": "MIT"
+    },
+    {
+      "file": "../soundscape.js",
+      "role": "Original local ambient musical composition",
+      "source": "Original Web Audio code",
+      "notes": "Opt-in sound; three themes crossfade; no external recording."
+    }
+  ]
+}

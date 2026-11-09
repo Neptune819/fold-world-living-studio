@@ -1,0 +1,1 @@
+export const profile = {"name": "Minghao Liu", "identity": "Student · Animation and interactive media", "school": "BNBU", "introduction": "I make imagined worlds through AI-assisted animation, game ideas and interactive experiments.", "contact": "GitHub · Neptune819"};

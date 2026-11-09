@@ -1,0 +1,34 @@
+/* Browsing is the default; management tools are available on demand. */
+.studio-administration{position:relative;align-self:start;font-size:11px}
+.studio-administration summary{cursor:pointer;padding:8px 10px;color:#756a57;border:1px solid #ac987544;border-radius:5px;list-style:none}
+.studio-administration summary::-webkit-details-marker{display:none}
+.studio-administration[open]{display:flex;flex-wrap:wrap;gap:6px;max-width:100%}
+.studio-administration[open] summary{margin-bottom:6px}
+#studio:not(.editing) .studio-toolbar{margin:0 0 24px;gap:8px}
+#studio:not(.editing) .studio-toolbar #studio-edit{background:transparent;color:#756a57;border-color:#ac987544}
+#studio:not(.editing){border-radius:14px;background:#e8e5ddf2;padding:30px}
+#studio:not(.editing) h1{font-family:Georgia,'Microsoft YaHei',serif;font-size:26px;letter-spacing:.5px}
+#studio:not(.editing) .content-card{border:0;border-top:1px solid #a9977833;border-radius:0;background:transparent;padding:24px 0;margin:0}
+#studio:not(.editing) .content-card:first-of-type{border-top:0}
+#studio .entry-image{border-radius:4px}
+.object-pin{width:23px;height:23px;background:#17242bac;border-color:#b99a6966;box-shadow:0 0 12px #d4b07022;transition:background .18s,box-shadow .18s}
+.object-pin::before{font-size:16px}.action-pin::before{content:'◈';font-size:12px;color:#b1d0cd}
+.object-pin span{font-weight:400;letter-spacing:.3px}
+.tools button{background:#e9e2d1ac;border-color:#a08e6655}
+#hint{letter-spacing:1.5px}
+#hover-tip{background:#14232de6;color:#e4d5b5;border:1px solid #af946744;border-radius:5px;font-size:11px;letter-spacing:.3px}
+@media(max-width:960px){
+  .tools{right:18px;top:18px}.worlds{right:23px;gap:23px}.view-controls{left:18px;bottom:18px}
+  #view-panel{position:absolute;left:0;bottom:52px;width:185px;max-width:calc(100vw - 40px);padding:14px}
+  #studio,#studio.panel-left{left:50%;right:auto;width:calc(100vw - 32px);max-width:520px;padding:23px;max-height:84vh}
+  #studio.editing .studio-layout{display:block}#studio.editing #studio-nav{position:static;flex-direction:row;flex-wrap:wrap;margin-bottom:18px}
+  #studio.editing #studio-nav::before{width:100%}#turn-dial{bottom:16px;width:46px;height:46px}
+}
+@media(prefers-reduced-motion:reduce){.object-pin{transition:none}}
+.object-pin::before,.action-pin::before{content:attr(data-symbol);font-size:14px}
+#sound-toggle{display:inline-flex;align-items:center;justify-content:center}
+#sound-toggle[data-playing=true] .sound-off{display:none}
+#sound-toggle[data-playing=true]{color:#b8873c;background:#eee2c5d9}
+
+/* Keep the debug summary clear of the height control. */
+#diagnostics{bottom:78px}

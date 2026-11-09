@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Moon Tides, a hand-responsive artwork in Fold World Living Studio. Move your hand to draw the stars together, then release a wave across the moon sea.">
+  <title>Moon Tides · Fold World</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="tides" aria-label="An interactive moonlit sea with silver star trails and ripples"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <header class="masthead">
+    <a class="home" href="../" target="_top" aria-label="Return to Fold World"><span aria-hidden="true">◈</span> FOLD WORLD <i> / </i> LIVING STUDIO</a>
+    <div class="top-actions"><button id="camera-toggle" class="primary" type="button">Enable camera</button><button id="pause" class="icon-button" type="button" aria-pressed="false" aria-label="Pause animation">Ⅱ</button></div>
+  </header>
+  <div class="work-marker" aria-hidden="true"><span>INTERACTIVE STUDY</span><b>02</b><span class="marker-line"></span><span>2026</span></div>
+  <div class="status-bar"><span id="status-dot" data-state="pointer" aria-hidden="true"></span><span id="mode-label">Pointer mode</span><span class="divider">/</span><span id="gesture-label">Move to draw the stars</span></div>
+  <section class="caption" aria-labelledby="art-title">
+    <p class="eyebrow">CREATIVE CODING 2.0 <span>月海回响</span></p>
+    <h1 id="art-title">Moon <em>Tides</em></h1>
+    <p class="intro">Gather a constellation.<br>Let it return to the sea.</p>
+    <p class="instruction" id="instruction">Move your pointer · Hold to gather · Release to ripple</p>
+    <div class="bottom-actions"><details id="about"><summary>About the work <span aria-hidden="true">＋</span></summary><div class="about-content">
+      <p>A gesture-driven extension of the moon-sea world in my earlier Fold World artwork. Your hand becomes a temporary centre of gravity: stars gather around it and return to the water when you let go.</p>
+      <h2>Try it</h2><p>Enable the camera, show one hand, and move it across the image. Pinch your thumb and index finger to gather light. Open them to release a ripple. You can also move, press and release a mouse or touch the canvas.</p>
+      <h2>What the AI does</h2><p>MediaPipe Hand Landmarker locates 21 hand landmarks. Palm position steers the stars; the distance between your thumb and index fingertip controls the gathering. This uses a pretrained model, without training a new classifier.</p>
+      <h2>Your camera</h2><p>Camera frames are processed in your browser. This page does not record or upload them. The camera starts only after you choose to enable it and approve the browser request. Stop it at any time.</p>
+      <p class="credit">Canvas artwork and interaction developed with AI coding assistance. Model: Google MediaPipe, Hand Landmarker float16 v1. SDK: 0.10.21, bundled locally. <a href="https://developers.google.com/edge/mediapipe/solutions/vision/hand_landmarker?tab=Web" target="_blank" rel="noopener noreferrer">Model documentation ↗</a></p>
+    </div></details><button id="release-wave" type="button">Send a ripple <span aria-hidden="true">↗</span></button></div>
+  </section>
+  <aside id="camera-panel" hidden aria-label="Camera preview">
+    <div class="camera-heading"><span id="camera-label">CAMERA · LOCAL ONLY</span><button id="preview-toggle" type="button" aria-expanded="true">Hide preview</button></div>
+    <div id="preview-wrap"><video id="webcam" autoplay playsinline muted></video><canvas id="hand-overlay" width="320" height="240" aria-hidden="true"></canvas></div>
+  </aside>
+  <p id="camera-message" role="status" aria-live="polite"></p>
+  <div id="paused-label" hidden>ANIMATION PAUSED</div>
+  <noscript>This interactive work needs JavaScript. The camera is optional.</noscript>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

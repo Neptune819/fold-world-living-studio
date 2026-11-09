@@ -1,0 +1,408 @@
+@font-face {
+  font-family: LocalSerif;
+  src: local("Songti SC"), local("SimSun");
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  background: #dedbd0;
+  scrollbar-width: thin;
+  scrollbar-color: #a43b32 #dedbd0;
+}
+body {
+  margin: 0;
+  height: 2000vh;
+  color: #282a26;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #a7352b;
+  outline-offset: 6px;
+}
+button {
+  border: 0;
+  background: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+#stage {
+  position: fixed;
+  inset: 0;
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23000' filter='url(%23n)' d='M0 0h160v160H0z'/%3E%3C/svg%3E");
+}
+header {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 3.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(#e2dfd5bb, transparent);
+}
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+.emblem {
+  font-size: 42px;
+  color: #a5372d;
+  line-height: 1;
+}
+.brand small {
+  display: block;
+  letter-spacing: 2px;
+  font-size: 8px;
+  margin-top: 7px;
+}
+nav {
+  display: flex;
+  gap: 34px;
+}
+nav button {
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 10px 0;
+  border-bottom: 1px solid transparent;
+}
+nav button.active {
+  border-color: #a5372d;
+  color: #a5372d;
+}
+#motion {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+#motion span {
+  margin-left: 10px;
+  color: #a5372d;
+}
+.intro {
+  position: fixed;
+  top: 31%;
+  left: 6%;
+  pointer-events: none;
+  max-width: 450px;
+}
+.eyebrow {
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  color: #963d32;
+  font-weight: bold;
+}
+h1 {
+  font-family: LocalSerif, "Times New Roman", serif;
+  font-size: clamp(36px, 4.1vw, 72px);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 3px;
+  margin: 28px 0;
+}
+h1 em {
+  font-style: normal;
+  color: #8f3d33;
+}
+.description {
+  font-size: 12px;
+  line-height: 2.1;
+  color: #62655b;
+  letter-spacing: 1px;
+}
+.edition {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 38px;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #77796c;
+}
+.rail {
+  position: fixed;
+  right: 3.5%;
+  top: 43%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.rail button {
+  position: relative;
+  font-size: 10px;
+  padding: 5px;
+}
+.rail button span {
+  position: absolute;
+  right: 34px;
+  white-space: nowrap;
+  font-size: 10px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.rail button:hover span,
+.rail button:focus-visible span {
+  opacity: 1;
+}
+.rail button.active {
+  color: #a5372d;
+}
+.rail i {
+  height: 24px;
+  width: 1px;
+  background: #6665;
+}
+footer {
+  position: fixed;
+  bottom: 30px;
+  left: 3.5%;
+  right: 3.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+footer small {
+  display: block;
+  margin: 10px 0 0 14px;
+  font-size: 8px;
+  color: #73766a;
+}
+.status-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a5372d;
+  margin-right: 9px;
+}
+.scroll-hint {
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+.scroll-hint span {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 22px;
+}
+#progress {
+  font-family: monospace;
+  font-size: 18px;
+}
+.progress-track {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #a5372d18;
+}
+#bar {
+  height: 100%;
+  width: 0;
+  background: #a5372d;
+}
+#ending {
+  position: fixed;
+  left: 6%;
+  top: 34%;
+  max-width: 400px;
+}
+#ending h2 {
+  font-family: LocalSerif, serif;
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 1.5;
+}
+#ending button,
+#error button {
+  padding: 14px 24px;
+  border: 1px solid #8f3d33;
+  color: #8f3d33;
+  font-size: 12px;
+}
+#loading,
+#error {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  background: #dedbd0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+#loading p {
+  font-family: LocalSerif, serif;
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+#loading small {
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+#error p {
+  max-width: 650px;
+  line-height: 1.8;
+  padding: 20px;
+}
+[hidden] {
+  display: none !important;
+}
+#diagnostics {
+  position: fixed;
+  right: 3.5%;
+  bottom: 95px;
+  font: 9px monospace;
+  color: #696d62;
+  text-align: right;
+}
+#diagnostics summary {
+  cursor: pointer;
+  opacity: 0.65;
+}
+#metrics {
+  display: block;
+  margin-top: 8px;
+  white-space: pre-line;
+}
+@media (max-width: 1000px) {
+  .intro {
+    left: 4%;
+    max-width: 300px;
+  }
+  h1 {
+    font-size: 38px;
+  }
+  nav {
+    gap: 18px;
+  }
+  header {
+    padding: 22px 4%;
+  }
+  .brand {
+    font-size: 15px;
+  }
+  .brand small {
+    font-size: 6px;
+  }
+  .description {
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+#ending:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -60px;
+  background: radial-gradient(
+    ellipse,
+    #dedbd0ed 0%,
+    #dedbd09c 45%,
+    transparent 72%
+  );
+  pointer-events: none;
+}
+#ending {
+  isolation: isolate;
+}
+#ending h2 {
+  font-size: clamp(30px, 2.7vw, 42px);
+}
+
+/* Scenic matte painting behind real parallax architecture and the WebGL canvas. */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, #e8e0caad, #e8e0ca40 28%, transparent 65%),
+    url("assets/utopia-sky.png") center/cover no-repeat;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+#stage {
+  z-index: -1;
+}
+body {
+  isolation: isolate;
+  background: transparent;
+}
+html {
+  background: #c8ccbc;
+}
+header {
+  background: linear-gradient(#e5dfcded, transparent);
+}
+footer {
+  background: linear-gradient(transparent, #e4deca90);
+  padding-top: 20px;
+}
+.intro:before {
+  content: "";
+  position: absolute;
+  inset: -55px;
+  z-index: -1;
+  background: radial-gradient(ellipse, #e8e0cdc9, transparent 70%);
+}
+.intro {
+  isolation: isolate;
+}
+#orbit-angle {
+  position: fixed;
+  left: 6%;
+  top: 73%;
+  font: 11px monospace;
+  letter-spacing: 3px;
+  color: #8f3d33;
+  padding-top: 12px;
+  border-top: 1px solid #8f3d3350;
+  min-width: 160px;
+}
+
+#orbit-angle {
+  background: #e8e0caaa;
+  backdrop-filter: blur(6px);
+  padding: 10px 12px;
+  top: auto;
+  bottom: 140px;
+  width: fit-content;
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "map": "color",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rock_face/rock_face_diff_1k.jpg",
+    "file": "rock_face-color.jpg",
+    "asset": "rock_face",
+    "source": "https://polyhaven.com/a/rock_face",
+    "license": "CC0"
+  },
+  {
+    "map": "normal",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rock_face/rock_face_nor_gl_1k.jpg",
+    "file": "rock_face-normal.jpg",
+    "asset": "rock_face",
+    "source": "https://polyhaven.com/a/rock_face",
+    "license": "CC0"
+  },
+  {
+    "map": "roughness",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rock_face/rock_face_rough_1k.jpg",
+    "file": "rock_face-roughness.jpg",
+    "asset": "rock_face",
+    "source": "https://polyhaven.com/a/rock_face",
+    "license": "CC0"
+  },
+  {
+    "map": "color",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/metal_plate/metal_plate_diff_1k.jpg",
+    "file": "metal_plate-color.jpg",
+    "asset": "metal_plate",
+    "source": "https://polyhaven.com/a/metal_plate",
+    "license": "CC0"
+  },
+  {
+    "map": "normal",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/metal_plate/metal_plate_nor_gl_1k.jpg",
+    "file": "metal_plate-normal.jpg",
+    "asset": "metal_plate",
+    "source": "https://polyhaven.com/a/metal_plate",
+    "license": "CC0"
+  },
+  {
+    "map": "roughness",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/metal_plate/metal_plate_rough_1k.jpg",
+    "file": "metal_plate-roughness.jpg",
+    "asset": "metal_plate",
+    "source": "https://polyhaven.com/a/metal_plate",
+    "license": "CC0"
+  },
+  {
+    "map": "color",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_wall_004/concrete_wall_004_diff_1k.jpg",
+    "file": "concrete_wall_004-color.jpg",
+    "asset": "concrete_wall_004",
+    "source": "https://polyhaven.com/a/concrete_wall_004",
+    "license": "CC0"
+  },
+  {
+    "map": "normal",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_wall_004/concrete_wall_004_nor_gl_1k.jpg",
+    "file": "concrete_wall_004-normal.jpg",
+    "asset": "concrete_wall_004",
+    "source": "https://polyhaven.com/a/concrete_wall_004",
+    "license": "CC0"
+  },
+  {
+    "map": "roughness",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_wall_004/concrete_wall_004_rough_1k.jpg",
+    "file": "concrete_wall_004-roughness.jpg",
+    "asset": "concrete_wall_004",
+    "source": "https://polyhaven.com/a/concrete_wall_004",
+    "license": "CC0"
+  }
+]

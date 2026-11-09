@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="18 件 AI 生成艺术作品，以不同绘画流派、媒介方法和视觉语言探索图像的可能。">
+  <title>AI 艺术实验画廊 · 折界</title>
+  <link rel="stylesheet" href="gallery.css?v=4">
+</head>
+<body>
+  <header class="gallery-header">
+    <a href="../index.html" id="back-to-world" class="back-link">← 返回场景</a>
+    <a href="#works" class="gallery-brand">AI 艺术画廊</a>
+    <span class="collection-label">18 件作品 · AI 生成</span>
+  </header>
+  <main>
+    <div id="overview">
+      <section class="gallery-intro" aria-labelledby="gallery-title">
+        <div class="intro-copy">
+          <p class="eyebrow">ART · IMAGE · IMAGINATION</p>
+          <h1 id="gallery-title">在色彩、线条<br>与想象之间</h1>
+          <p class="intro-description">十八件图像研究，探索不同艺术流派与媒介语言。<br>从静止的广场，到梦境中的潮汐。</p>
+          <a href="#works" class="browse-link">浏览全部作品 <span aria-hidden="true">↓</span></a>
+        </div>
+        <figure class="intro-art">
+          <div class="hero-image-frame">
+            <img src="images/art-03.webp" srcset="images/thumb-03.webp 480w, images/art-03.webp 1122w" sizes="(max-width:620px) 65vw, 320px" width="1122" height="1402" alt="夜里生长的花园，人物与植物曲线相互交织的新艺术运动风格作品" fetchpriority="high">
+            <div id="hero-image-status" class="hero-image-status" role="status" aria-live="polite" aria-atomic="true" hidden><p>封面图片暂未加载。</p><button id="retry-hero-image" type="button">重新加载封面</button></div>
+          </div>
+          <figcaption id="hero-caption" tabindex="-1">夜里生长的花园 · 新艺术运动</figcaption>
+        </figure>
+      </section>
+      <section id="works" class="works-section" aria-labelledby="works-heading">
+        <div class="section-heading"><h2 id="works-heading" tabindex="-1">作品目录</h2><span>选择一件作品，进入它的世界</span></div>
+        <div class="gallery-tools">
+          <div class="search-field">
+            <label for="gallery-search">查找作品</label>
+            <div class="search-control"><input id="gallery-search" type="search" placeholder="作品、风格或艺术家" autocomplete="off" spellcheck="false" aria-controls="work-grid"><button id="clear-search" type="button" hidden aria-label="清空搜索">清空</button></div>
+          </div>
+          <div id="collection-filters" class="collection-filters" role="group" aria-label="按视觉语言筛选">
+            <button type="button" data-collection="all" aria-pressed="true">全部作品 <span>18</span></button>
+            <button type="button" data-collection="narrative" aria-pressed="false">具象与叙事 <span>7</span></button>
+            <button type="button" data-collection="abstract" aria-pressed="false">抽象与几何 <span>5</span></button>
+            <button type="button" data-collection="print" aria-pressed="false">水墨与版画 <span>3</span></button>
+            <button type="button" data-collection="photo" aria-pressed="false">摄影与拼贴 <span>2</span></button>
+            <button type="button" data-collection="digital" aria-pressed="false">数字艺术 <span>1</span></button>
+          </div>
+        </div>
+        <p id="result-count" class="result-count" role="status" aria-live="polite" aria-atomic="true">共 18 件作品</p>
+        <div id="empty-results" class="empty-results" hidden><p>暂时没有符合条件的作品。</p><button id="reset-filters" type="button">查看全部作品</button></div>
+        <div id="work-grid" class="work-grid"></div>
+      </section>
+      <footer class="gallery-footer">本系列为 AI 生成作品；风格名称描述图像借鉴的艺术与媒介语言。</footer>
+    </div>
+    <article id="work-detail" class="work-detail" hidden aria-labelledby="work-title"></article>
+  </main>
+  <dialog id="art-lightbox" class="art-lightbox" aria-labelledby="lightbox-title">
+    <header class="lightbox-toolbar"><h2 id="lightbox-title"></h2><div class="lightbox-actions"><button id="lightbox-zoom" type="button" aria-pressed="false">原尺寸</button><button id="lightbox-close" type="button" aria-label="关闭大图，返回作品介绍">关闭 <span aria-hidden="true">×</span></button></div></header>
+    <div id="lightbox-stage" class="lightbox-stage" tabindex="0" aria-label="作品大图，放大后可滚动查看细节"></div>
+    <p class="lightbox-hint">原尺寸下可滚动查看细节 · Esc 返回作品介绍</p>
+  </dialog>
+  <noscript><p class="no-script">请启用 JavaScript 以浏览全部作品与风格介绍。</p></noscript>
+  <script type="module" src="gallery.js?v=4"></script>
+</body>
+</html>
